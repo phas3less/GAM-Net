@@ -42,9 +42,9 @@ def calculate_segmentation_metrics(y_true, y_pred):
 
 
 # 定义路径
-pred_root = r"E:\master\毕设\code\Polyp-PVT-main\result_map\SwinUnet"
-gt_root = r"E:\master\datasets\used\UGASD_final\Annotations"
-output_csv = r"E:\master\毕设\code\Polyp-PVT-main\result_map\SwinUnet\metrics_summary.csv"  # 结果保存路径
+pred_root = r"code\result_map\GAMNet"
+gt_root = r"E:\datasets\used\UGASD_final\Annotations"
+output_csv = r"E:\code\result_map\GAMNet\metrics_summary.csv"  # 结果保存路径
 
 # 定义二值化阈值（根据预测结果调整）
 THRESHOLD = 128
@@ -141,4 +141,5 @@ if all_metrics:
     df.to_csv(output_csv, index=False)
     print(f"Results saved to {output_csv}")
 else:
+
     print("No valid data processed.")
