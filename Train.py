@@ -124,19 +124,7 @@ def train(train_loader, model, optimizer, epoch, data_root):
             logging.info('##############################################################################best:{}'.format(best))
 
 
-def plot_train(dict_plot=None, name = None):
-    color = ['red', 'lawngreen', 'lime', 'gold', 'm', 'plum', 'blue']
-    line = ['-', "--"]
-    for i in range(len(name)):
-        plt.plot(dict_plot[name[i]], label=name[i], color=color[i], linestyle=line[(i + 1) % 2])
-        transfuse = {'CVC-300': 0.902, 'CVC-ClinicDB': 0.918, 'Kvasir': 0.918, 'CVC-ColonDB': 0.773,'ETIS-LaribPolypDB': 0.733, 'test':0.83}
-        plt.axhline(y=transfuse[name[i]], color=color[i], linestyle='-')
-    plt.xlabel("epoch")
-    plt.ylabel("dice")
-    plt.title('Train')
-    plt.legend()
-    plt.savefig('eval.png')
-    # plt.show()
+
     
     
 if __name__ == '__main__':
